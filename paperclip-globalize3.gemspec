@@ -3,7 +3,7 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'paperclip/globalize3/version'
 
-paperclip_version = '~> 3.3'
+paperclip_version = '~> 4.1'
 unless ENV['PAPERCLIP_VERSION'].to_s.empty?
   paperclip_version = Gem::Requirement.new(ENV['PAPERCLIP_VERSION'])
 end
@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "paperclip", paperclip_version
-  spec.add_runtime_dependency "globalize3", "~> 0.3"
+  spec.add_runtime_dependency "globalize", "~> 4.0"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "appraisal", "~> 0.5.1"

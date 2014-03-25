@@ -29,11 +29,7 @@ module Paperclip
 
           @dirty = true
 
-          if post_processing &&
-              (Paperclip::Attachment.instance_method(:valid_assignment?).parameters.present? || # paperclip <=3.3 compatibility
-                  valid_assignment?)
-            post_process(*only_process)
-          end
+          post_process(*only_process) if post_processing
 
           instance_write(:file_size,   @queued_for_write[:original].size)
           instance_write(:fingerprint, @queued_for_write[:original].fingerprint) if instance_respond_to?(:fingerprint)
